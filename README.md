@@ -1,14 +1,15 @@
 # Olympics-Data-Analysis
-Introduction
+### Introduction
 For this project, we are doing exploratory data analysis on Olympic Games data. In our analysis, we specifically research four areas of our dataset: 
 We observe the performance of host countries compared to years when they do not host. Generally, host countries would be expected to have home field advantage for various reasons. 
 We analyze is the performance of men versus women in the Olympic Games. By categorizing medal count and gender, we can discern how some countries may have higher performing athletes from men or women. 
 We look into the age distribution of medalists amongst various sports. Age plays a major factor in competitive sports, by observing the distribution of medals amongst age ranges, we aim to highlight the prime ages of such sports. 
 Lastly, we will analyze countries' performances in various sports in hopes of displaying what countries do well in what sports. 
 
-Data Processing
+### Data Processing
 Initially, our project idea was inspired by the Tokyo 2020 Summer Olympics. The data we use comes from a Kaggle dataset that contains data from 1896 through 2016. There are 134,732 entries, and fifteen columns containing the following variables: ID, name, sex, age, height, weight, team, NOC or National Olympic Committee code, games, year, season, city, sport, event, and medal result. Additionally, the dataset came with a second CSV that showed the corresponding country with each NOC code. We initially tried to use the team variable as the country of origin for each athlete; however, there were over one thousand unique team names, most of which not intuitively linked to a specific country and many of them being a one-of occurrence. Thus, we used the CSV containing NOC and countries, appending it to the primary data frame and using the country from the second dataset to show country of origin for each respective athlete. As a result, we were able to categorize every athlete into one of the 230 NOC recognized countries, and drop the team and NOC columns as well. Another step in our data engineering process was creating a variable containing the host country for each of the Olympic Games. While the games and city column contained the host city, there was no information on the host country. As a result, we scraped a table from Wikipedia containing a list of the host cities and their respective countries. We then also merged that table to add in the host country variable. From there, we looked to eliminate unnecessary or repetitive variables. While the ID variable had a purpose to distinguish athletes with the same name, there were other means to solve that problem such as differentiating using sport or country of origin. Event was dropped due to its similarity to the Sports variable, and the Games variable was dropped because the information was already contained in the Season and Year variables.
-Data Analyzing
-Host Country and Medal Count
+### Data Analyzing
+#### Host Country and Medal Count
 The home-field advantage is widely known for its positive influence over athletes' performance competing for medals. It has always been the case for various sports at different levels, even at the highest level competitions, including the Olympics. In this part, we will work with the cleaned data to explore the relationship between the host country and their medal count. More precisely, with the home advantage, if the participants from the host nation would help their country to win more medals.
 The bar chart shows the number of times a country has hosted the Olympics. We can see that the US has hosted the most games, eight times, followed by France, which has hosted five times.
+
